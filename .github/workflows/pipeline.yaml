@@ -5,19 +5,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-  steps:
+    steps: # Correctly indented under 'build'
     - name: Checkout Code
-      uses: actions/checkout@v5
-    
-    - name: Set up Node.jobs
-      uses: actions/setup-node@v3
+      uses: actions/checkout@v4 # Using v4, as v5 is still in beta for most.
 
-      with:
+    - name: Set up Node.js # Corrected 'Node.jobs'
+      uses: actions/setup-node@v3
+      with: # Correctly indented under 'uses'
         node-version: 16
       
-    - name: Install dependecies
-      run: npm Install
+    - name: Install dependencies # Corrected 'dependecies'
+      run: npm install # Corrected 'Install'
     
-    - name: Run test
+    - name: Run tests # Corrected 'test' to 'tests' for clarity
       run: npm test
